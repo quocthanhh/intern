@@ -13,7 +13,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductPerPage] = useState(10);
   const [showModal, setShowModal] = useState(false);
-  const productsChange = [];
+  const [productsChange, setProductsChange] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -45,12 +45,7 @@ const App = () => {
     else {
       productsChange.push(product)
     }
-  }
-
-  const onSubmit = () => {
-    productsChange.forEach(element => {
-      console.log(element)
-    });
+    setProductsChange(productsChange)
   }
 
 
@@ -61,7 +56,7 @@ const App = () => {
       </div>
 
       <div className="container">
-        <Products products={currentProducts} loading={loading} colors={colors} onChangeProduct={onChangeProduct()}/>
+        <Products products={currentProducts} loading={loading} colors={colors} onChangeProduct={onChangeProduct}/>
         <Pagination
           productsPerPage={productsPerPage}
           totalProducts={products.length}
@@ -70,8 +65,8 @@ const App = () => {
         </div>
 
         <div className='submit-button'>
-          <button onClick={openModal} onSubmit={onSubmit()} >Submit</button>
-          <Modal showModal={showModal} setShowModal={setShowModal} />
+          <button onClick={openModal} >Submit</button>
+          <Modal showModal={showModal} setShowModal={setShowModal} productsChange={productsChange} />
         </div>
     </div>
     

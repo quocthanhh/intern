@@ -7,6 +7,7 @@ const Colors = ({ colors, selected }) => {
             {
                 colors.map(color => {
                     if (selected == null){
+                        selected = color.lenghth + 1;
                         return (
                             <option disable selected>Select value</option>
                         )

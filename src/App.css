@@ -55,6 +55,8 @@ table img {
   background-color: #5fe4e4;
   color: #fff;
   padding: 10px;
+  margin: 1px;
+  border-radius: 10px;
 }
 
 .submit-button button {
@@ -62,7 +64,7 @@ table img {
   color: #fff;
   padding: 10px;
   float: right;
-  margin: 20px 100px 50px 0px;
+  margin: 50px 100px 50px 0px;
   width: 100px;
   border-radius: 10px;
 }
@@ -82,11 +84,11 @@ table img {
 
 .wrapper {
   width: 800px;
-  height: 300px;
+  height: 80%;
   box-shadow: 0px 5px 16px rgba(0,0,0,0.2);
   background: #fff;
   color: #000;
-  position: relative;
+  position: fixed;
   border-radius: 10px;
 }
 
@@ -103,7 +105,33 @@ table img {
   color: #141414;
 }
 
+.updatedList {
+  display: block;
+  overflow: scroll;
+  height: 400px;
 
-.leftContent img {
-  width: 50%;
+}
+
+ul {
+  padding-top: 30px;
+}
+
+ul li{
+  list-style-type: none;
+}
+
+.leftContent {
+  display: inline-block;
+  float: left;
+  width: 30%;
+}
+
+.rightContent {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+img {
+  padding-left: 20px ;
+  width: 70%;
 }
